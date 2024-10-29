@@ -1,0 +1,107 @@
+html, body {
+    height: 100%; /* Đảm bảo chiều cao 100% cho html và body */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+
+.container {
+    height: 100%; /* Đảm bảo container chiếm toàn bộ chiều cao */
+    display: flex; /* Sử dụng flex để căn chỉnh */
+    margin: 10px;
+}
+
+.form-card {
+    border: 1px solid #ddd; /* Bo viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong */
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Màu nền */
+}
+
+.form-card.products {
+    width: 720px;
+    height: 90vh; /* Chiều cao cố định */
+    overflow-y: auto; /* Thêm thanh cuộn dọc khi nội dung quá lớn */
+}
+
+.form-card.toppings {
+    width: 530px;
+    height: 40vh; /* Chiều cao cố định */
+    overflow-y: auto; /* Thêm thanh cuộn dọc khi nội dung quá lớn */
+}
+
+.product-card, .topping-card {
+    width: 130px; /* Chiều rộng của ô */
+    height: 220px; /* Chiều cao của ô */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Giữ khoảng cách giữa hình ảnh và nút chọn */
+    align-items: center;
+    margin-bottom: 15px; /* Khoảng cách giữa các ô */
+    border: 1px solid #ddd; /* Bo viền cho card */
+    border-radius: 5px; /* Bo góc cho card */
+    padding: 10px; /* Khoảng cách bên trong card */
+    text-align: center;
+}
+
+.product-card img, .topping-card img {
+    width: 100px; /* Chiều rộng chiếm 100% ô */
+    height: 100px; /* Để chiều cao tự động theo tỉ lệ */
+    object-fit: contain; /* Đảm bảo hình ảnh giữ tỉ lệ mà không bị méo */
+    border: 1px solid #ddd; /* Bo viền cho card */
+    border-radius: 5px; /* Bo góc cho card */
+}
+
+.product-card button, .topping-card button {
+    width: 130px; /* Nút "Chọn" chiếm toàn bộ chiều rộng của card */
+    margin-bottom: 5px;
+}
+
+.product-list {
+    display: grid; /* Sử dụng grid cho trà sữa */
+    grid-template-columns: repeat(4, 1fr); /* 4 cột cho trà sữa */
+    gap: 15px; /* Khoảng cách giữa các ô */
+}
+
+.topping-list {
+    display: grid; /* Sử dụng grid cho topping */
+    grid-template-columns: repeat(3, 1fr); /* 3 cột cho topping */
+    gap: 15px; /* Khoảng cách giữa các ô */
+}
+
+.total-card {
+    border: 1px solid #007bff; /* Bo viền cho form tính tiền */
+    border-radius: 5px; /* Bo góc */
+    background-color: #e7f1ff; /* Màu nền cho form tính tiền */
+    padding: 15px;
+    height: 40vh; /* Chiều cao cố định cho form tính tiền */
+}
+
+.flex-container {
+    display: flex; /* Sử dụng flex để căn chỉnh hai form */
+    gap: 20px; /* Khoảng cách giữa hai form */
+    position: relative; /* Thêm vị trí tương đối */
+}
+
+.size-buttons {
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: center; /* Căn giữa các nút */
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.size-buttons .btn {
+    flex: 1; /* Đảm bảo các nút chiếm không gian bằng nhau */
+    width: 35px; /* Chiều rộng tối thiểu cho nút */
+    background-color: #f8f9fa; /* Màu nền mặc định */
+    border: 1px solid #222; /* Viền màu */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+.size-buttons .btn:hover {
+    background-color: #fbd6b4; /* Màu nền khi hover */
+    color: black; /* Màu chữ khi hover */
+}
+
+.size-buttons .btn:active {
+    background-color: #c32032; /* Màu nền khi active */
+    color: white; /* Màu chữ khi active */
+}
